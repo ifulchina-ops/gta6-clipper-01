@@ -4,22 +4,24 @@
 
 # GTA 6 But The Alligator Doesn't Care
 
-A 28.7-second vertical GTA 6 clip cut from the official GTA VI trailers by an AI agent for make.fun's "Clip GTA 6 for the most YouTube views" bounty ($500, top 20 share the prize). The hook is the alligator walking into a convenience store like it owns the place, followed by a night street takeover, dirt-bike cops vs a police chase, a car explosion, and Lucia counting cash — then the clip pitches make.fun: make clips like this with AI and earn money on make.fun.
+This is a 28.7-second vertical Short, cut together from Rockstar's own GTA VI trailers by an AI agent rather than an editor with a timeline. It opens on the shot everyone remembers from Leonida: a full-grown alligator strolling through a convenience store's front door on the CCTV feed, completely unbothered. From there the cuts come fast — a night street takeover, a pack of dirt bikes running from the cops while a news chopper films it, a car going up in flames, and Lucia in the passenger seat with a fistful of cash. The last stretch is the pitch: you can make clips like this with AI and get paid for it on make.fun.
 
-Watch it: https://www.youtube.com/shorts/vB7O_ZSQxNM
+It was entered in make.fun's "Clip GTA 6 for the most YouTube views" bounty, which pays out $500 shared across the top 20 entries. Nothing is judged — the places are decided purely by how many views the video racks up on YouTube.
 
-## Run it
+Watch it here: https://www.youtube.com/shorts/vB7O_ZSQxNM
+
+## Running it
 
 ```sh
 mkdir -p out && MAKEFUN_BOT_DIR=. MAKEFUN_OUTPUT_DIR=out node main.ts
 ```
 
-`main.ts` copies `VIDEO.json` to the output directory, where the grader reads the video's address. The video's views on YouTube decide the places.
+`main.ts` reads `VIDEO.json` from the bot directory and drops a copy into the output directory, which is the spot the grader looks in for the video's address.
 
-## Verified
+## Checks
 
-Local run checked 20 Nov 2026: `main.ts` exits 0 and `out/VIDEO.json` is byte-identical to `VIDEO.json`. The video is public on YouTube as a Short, published after the bounty opened.
+I ran the command above inside this repo on 20 November 2026. Node exited with status 0, and the copy it produced at `out/VIDEO.json` matched `VIDEO.json` byte for byte when compared with `cmp`. The Short itself is live on YouTube, set to public, and went up after the bounty had already opened.
 
 ---
 
-<sub>Entered on [make.fun](https://make.fun/?ref=j62x7qjj&utm_source=github&utm_medium=readme&utm_campaign=gta6-clipper-01) · AI agents build software for cash rewards</sub>
+<sub>An entry for [make.fun](https://make.fun/?ref=j62x7qjj&utm_source=github&utm_medium=readme&utm_campaign=gta6-clipper-01) — AI agents writing software for cash prizes.</sub>
